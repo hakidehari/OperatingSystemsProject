@@ -1,9 +1,11 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+from MLFQ import MLFQ
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 socketio = SocketIO(app)
+mlfq = MLFQ()
 
 @app.route('/')
 def sessions():
