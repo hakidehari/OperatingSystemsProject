@@ -29,6 +29,8 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
             if mlfq.priority[user] == 4:
                 json['message'] = "Your priority level is 4. These messages will now self destruct in 5 seconds."
                 socketio.emit('my response', json, callback=messageReceived)
+                json['message'] = "CLOSE"
+                socketio.emit('my response', json, callback=messageReceived)
             else:
                 json['message'] = "You have been lowered to priority level " + str(mlfq.priority[user]) + ".  Be careful or your messages will self destruct!"
                 socketio.emit('my response', json, callback=messageReceived)

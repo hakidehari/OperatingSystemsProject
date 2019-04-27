@@ -47,10 +47,22 @@
       } )
       socket.on( 'my response', function( msg ) {
         console.log( msg )
-        if( typeof msg.user_name !== 'undefined' ) {
-          $( 'h3' ).remove()
+
+        if (msg.message == "CLOSE") {
+          var seconds = 0;
+          setInterval(function() {
+              seconds++;
+              if (seconds == 5) {
+                window.close();
+              }
+          }, 1000);
+        }
+
+        else if( typeof msg.user_name !== 'undefined' ) {
+          //$( 'h3' ).remove()
           $( 'div.message_holder' ).append( '<div><b style="color: green">'+msg.user_name+':  '+'</b><b style="color: green">'+msg.message+'</b></div>' )
         }
+
       })
     </script>
 
