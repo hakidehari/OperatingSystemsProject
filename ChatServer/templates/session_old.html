@@ -1,22 +1,18 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
   <head>
-    <title>MI6 Comms</title>
-   <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+    <title>MLFQ Chat Server</title>
   </head>
-  <body style="background: black; font-family: 'Gugi'; cursive width: 70px;">
-    <h1 style="color: green; text-align: center;">MI6 restricted channel</h1>
-    <h3 style="color: green; text-align: center;">Everything you say here is being watched, and your messages are limited, so make them count, agent</h3>
+  <body>
 
-    <div class="message_holder" style="align:center;"></div>
+    <h3 style='color: #ccc;font-size: 30px;'>No message yet..</h3>
+    <div class="message_holder"></div>
 
-    <form action=""  method="POST">
-      <input type="text" class="username" style="color: green; " placeholder="Identify Yourself"/>
-      <input type="text" class="message"  style="color: green;" placeholder="Enter your Message.."/>
+    <form action="" method="POST">
+      <input type="text" class="username" placeholder="User Name"/>
+      <input type="text" class="message" placeholder="Messages"/>
       <input type="submit"/>
     </form>
-
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -49,7 +45,7 @@
         console.log( msg )
         if( typeof msg.user_name !== 'undefined' ) {
           $( 'h3' ).remove()
-          $( 'div.message_holder' ).append( '<div><b style="color: green">'+msg.user_name+':  '+'</b><b style="color: green">'+msg.message+'</b></div>' )
+          $( 'div.message_holder' ).append( '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' )
         }
       })
     </script>
